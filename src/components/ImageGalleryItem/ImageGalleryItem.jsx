@@ -6,16 +6,20 @@ import { GalleryItem, Image } from './ImageGalleryItem.styled';
 export class ImageGalleryItem extends React.Component {
   state = { isModalOpen: false };
 
-  toggleModal = e => {
+  toggleModal = () => {
+    this.setState(prevState => ({ isModalOpen: !prevState.isModalOpen }));
+  };
+
+  onCloseModalClick = e => {
     if (e.currentTarget === e.target) {
-      this.setState(prevState => ({ isModalOpen: !prevState.isModalOpen }));
+      this.toggleModal();
     }
   };
 
   render() {
     const { webformatURL, tags, largeImageURL } = this.props;
     const { isModalOpen } = this.state;
-    const { toggleModal } = this;
+    const { toggleModal, onCloseModalClick } = this;
 
     return (
       <GalleryItem className="gallery-item">
@@ -32,7 +36,8 @@ export class ImageGalleryItem extends React.Component {
           <Modal
             modalImg={largeImageURL}
             tags={tags}
-            closeModal={toggleModal}
+            closeByEsc={toggleModal}
+            closeModal={onCloseModalClick}
           />
         )}
       </GalleryItem>

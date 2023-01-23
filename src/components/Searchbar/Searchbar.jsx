@@ -7,7 +7,6 @@ import { Header, Form, Input, ButtonSubmit } from './Searchbar.styled';
 export  class Searchbar extends Component {
   state = {
     query: '',
-    page: 1,
   };
 
   handleSearchQueryChange = e => {

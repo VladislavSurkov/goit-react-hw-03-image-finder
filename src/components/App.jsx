@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-import { fetchImages } from './ImageApi/ImageApi';
+import { fetchImages } from '../ImageApi/ImageApi';
 import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Button } from './Button/Button';

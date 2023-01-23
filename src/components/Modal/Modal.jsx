@@ -15,10 +15,11 @@ export class Modal extends Component {
   }
 
   closeByEsc = e => {
-    if (e.code !== 'Escape') {
-      return;
+    if (e.code === 'Escape') {
+      this.props.closeByEsc();
     }
-    this.props.closeModal();
+      return;
+    
   };
 
   render() {
