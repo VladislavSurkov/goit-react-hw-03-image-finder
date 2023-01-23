@@ -33,9 +33,7 @@ export  class Searchbar extends Component {
       <Header>
         <Form onSubmit={this.handleSubmit} >
           <ButtonSubmit type="submit" >
-            <span >
               <FiSearch size={25} stroke="#3f51b5" />
-            </span>
           </ButtonSubmit>
 
           <Input
